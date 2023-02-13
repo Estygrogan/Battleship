@@ -9,4 +9,9 @@ class Board:
         self.ships = []
     
     def print(self):
-        
+        # Function that will print our board
+        for row in self.board:
+            print(" ".join(row))
+    
+
+    
