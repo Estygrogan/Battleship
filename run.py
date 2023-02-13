@@ -23,3 +23,20 @@ class Board:
         return hit
     else:
         return miss
+    
+    def add_ship(self, x, y, type="computer"):
+        if len(self.ships) >=self.num_ships:
+            print("Error! You cannot print any more ships!")
+        else:
+            self.ships.append((x, y))
+            if self.type == "player":
+                self.board [x] [y] = "@"
+
+def check_coordinates():
+    pass
+
+def play_game():
+    pass
+
+def new_game():
+    pass
