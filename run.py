@@ -37,28 +37,28 @@ class Board:
                 self.board[x][y] = "@"
 
 
-    def random_point(size):
-        """
-        Helper function to return a random integer between 0 and size
-        """
-        return randint(0, size - 1)
+def random_point(size):
+    """
+    Helper function to return a random integer between 0 and size
+    """
+    return randint(0, size - 1)
 
 
-    def check_coordinates(board):
-        """
-        Function that will make sure coordinates are integers
-        """
-        try:
-            x, y = int(x), int(y)
-            board.board[x][y] in board.board
+def check_coordinates(board):
+    """
+    Function that will make sure coordinates are integers
+    """
+    try:
+        x, y = int(x), int(y)
+        board.board[x][y] in board.board
         
-        except IndexError:
-            print("You must enter a valid number to make a guess")
+    except IndexError:
+        print("You must enter a valid number to make a guess")
             return False
         
-        if guess in guesses.board:
+    if guess in guesses.board:
             print("You have already guessed these coordinates, guess again")
-            return False
+    return False
 
 
 
