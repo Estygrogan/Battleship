@@ -5,7 +5,7 @@ scores = {"player": 0, "computer": 0}
 
 class Board:
 
-    def __init__(self, size, num_ships, name, board_type):
+    def __init__(self, size, num_ships, name, type):
         self.size = size
         self.board = [["." for x in range(size)] for y in range(size)]
         self.num_ships = num_ships
