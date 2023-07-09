@@ -71,11 +71,6 @@ def check_coordinates(board):
         return False
 
 
-'''
-def print_board(board):
-    player_board.print()
-    computer_board.print()
-'''
 
 def play_game(computer_board, player_board):
     """
