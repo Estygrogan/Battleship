@@ -45,6 +45,15 @@ def random_point(size):
     return randint(0, size - 1)
 
 
+def fill_board(board):
+    """
+    Function designed to populate our board with ships
+    """
+    x = random_point(board.size)
+    y = random_point(board.size)
+    board.add_ship(x, y)
+
+
 def check_coordinates(board):
     """
     Function that will make sure coordinates are integers
@@ -62,41 +71,23 @@ def check_coordinates(board):
         return False
 
 
-def fill_board(board):
-    """
-    Function designed to populate our board with ships
-    """
-    x = random_point(board.size)
-    y = random_point(board.size)
-    board.add_ship(x, y)
-
-
+'''
 def print_board(board):
     player_board.print()
     computer_board.print()
+'''
 
-
-def play_game():
+def play_game(computer_board, player_board):
     """
     Defines rules while playing the game
     """
-    while num_ships > 0:
+    while self.guesses > 0:
         if input("Please enter your guess") in ships.board:
             print("Successful hit, well done!")
             return True
         else:
             print("Miss! Try again")
             return False
-
-
-def select_winner():
-    """
-    Function that will determine the game winner
-    """
-    if score_player > score_computer:
-        print("You have won the game!")
-    elif score_computer > score_player:
-        print("Game Over, Computer has won.")
 
 
 def new_game():
@@ -111,7 +102,8 @@ def new_game():
     print(f" Board Size{size}, Number of Ships{num_ships}")
     print("Top left corner is row:0, col 0")
     print("-" * 35)
-    player_name = input("Please enter your name")
+    player_name = input("Please enter your name \n")
+    print("-" * 35)
     computer_board = Board(size, num_ships, "Computer", type="computer")
     player_board = Board(size, num_ships, player_name, type="player")
 
@@ -119,7 +111,7 @@ def new_game():
         fill_board(player_board)
         fill_board(computer_board)
 
-    play_game(player_board, computer_board)
+    play_game(computer_board, player_board)
 
 
 new_game()
